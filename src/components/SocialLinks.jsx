@@ -3,10 +3,10 @@ import {
   Linkedin,
   Github,
   Instagram,
-  Youtube,
   Mail,
   ExternalLink,
 } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -31,13 +31,13 @@ const socialLinks = [
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
   },
   {
-    name: "YouTube",
-    displayName: "Youtube",
-    subText: "@dishan1820",
-    icon: Youtube,
-    url: "https://www.youtube.com/@dishan1820",
-    color: "#FF0000",
-    gradient: "from-[#FF0000] to-[#CC0000]",
+    name: "Twitter",
+    displayName: "Twitter",
+    subText: "@dishan",
+    icon: FaXTwitter,
+    url: "https://x.com/Dishan49214973",
+    color: "#ffffff",
+    gradient: "from-[#333] to-[#24292e]",
   },
   {
     name: "GitHub",
@@ -62,7 +62,7 @@ const socialLinks = [
 const SocialLinks = () => {
   const linkedIn = socialLinks.find((link) => link.isPrimary);
   const otherLinks = socialLinks.filter((link) => !link.isPrimary);
-  const [instagram, youtube, github, mail] = otherLinks;
+  const [instagram, twitter, github, mail] = otherLinks;
 
   useEffect(() => {
     AOS.init({
@@ -145,7 +145,7 @@ const SocialLinks = () => {
 
         {/* Second Row - Instagram & YouTube */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[instagram, youtube].map((link, index) => (
+          {[instagram, twitter].map((link, index) => (
             <a
               key={link.name}
               href={link.url}
